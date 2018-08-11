@@ -17,13 +17,10 @@ int main() {
 
     //Declare window and shapes
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Pong");
-    //sf::RectangleShape leftPaddle(Vector2f(10,100));
     sf::RectangleShape rightPaddle(Vector2f(10,100));
 
     //Set left paddle properties
     Paddle leftPaddle(LEFT_PADDLE_X, (WIN_HEIGHT)/2-50);
-    //leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
-
 
     //Set right paddle properties 
     rightPaddle.setFillColor(sf::Color::White);
@@ -67,7 +64,7 @@ int main() {
             }
         }
 
-        //Handle collions and ball animations
+        leftPaddle.update();
 
         //Handle the screen stuff
         window.clear();

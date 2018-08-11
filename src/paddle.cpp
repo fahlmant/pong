@@ -21,14 +21,14 @@ RectangleShape Bat::getShape(){
     return batShape;
 }
 
-void Bat::moveLeft(){
+void Bat::moveUp(){
 
-    position.x -= batSpeed;
+    position.y -= batSpeed;
 }
 
-void Bat::moveRight(){
+void Bat::moveDown(){
 
-    position.x += batSpeed;
+    position.y += batSpeed;
 }
 
 void Bat::update(){
