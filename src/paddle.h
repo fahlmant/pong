@@ -7,8 +7,6 @@ class Paddle {
     private:
         Vector2f position;
         RectangleShape paddleShape;
-        float paddleSpeed;
-
     public:
         Paddle(float startX, float startY);
         FloatRect getPosition();
