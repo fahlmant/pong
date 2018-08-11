@@ -15,17 +15,14 @@ using namespace sf;
 int main() {
 
 
-    //Declare window and shapes
+    //Declare window
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Pong");
-    sf::RectangleShape rightPaddle(Vector2f(10,100));
 
     //Set left paddle properties
     Paddle leftPaddle(LEFT_PADDLE_X, (WIN_HEIGHT)/2-50);
 
     //Set right paddle properties 
-    rightPaddle.setFillColor(sf::Color::White);
-    int rightPaddleY = (WIN_HEIGHT)/2-50;
-    rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
+    Paddle rightPaddle(RIGHT_PADDLE_X, (WIN_HEIGHT)/2-50);
 
     //Set "ball" properties
     Ball ball((WIN_WIDTH/2)-5, (WIN_HEIGHT/2)-5);
@@ -53,23 +50,22 @@ int main() {
                         leftPaddle.moveDown();
                     }
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-                        rightPaddleY -= 10;
-                        rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
+                        rightPaddle.moveUp();
                     }
                     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-                        rightPaddleY += 10;
-                        rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
+                        rightPaddle.moveDown();
                     }
                 }
             }
         }
 
         leftPaddle.update();
+        rightPaddle.update();
 
         //Handle the screen stuff
         window.clear();
         window.draw(leftPaddle.getShape());
-        window.draw(rightPaddle);
+        window.draw(rightPaddle.getShape());
         window.draw(ball.getShape());
         window.display();
     }
