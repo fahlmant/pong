@@ -5,34 +5,34 @@ Paddle::Paddle(float startX, float startY){
     position.x = startX;
     position.y = startY;
 
-    batSpeed = .3f;
+    paddleSpeed = .3f;
 
-    batShape.setSize(sf::Vector2f(10, 100));
-    batShape.setPosition(position);
+    paddleShape.setSize(sf::Vector2f(10, 100));
+    paddleShape.setPosition(position);
 }
 
-FloatRect Bat::getPosition(){
+FloatRect Paddle::getPosition(){
 
-    return batShape.getGlobalBounds();
+    return paddleShape.getGlobalBounds();
 }
 
-RectangleShape Bat::getShape(){
+RectangleShape Paddle::getShape(){
 
-    return batShape;
+    return paddleShape;
 }
 
-void Bat::moveUp(){
+void Paddle::moveUp(){
 
-    position.y -= batSpeed;
+    position.y -= paddleSpeed;
 }
 
-void Bat::moveDown(){
+void Paddle::moveDown(){
 
-    position.y += batSpeed;
+    position.y += paddleSpeed;
 }
 
-void Bat::update(){
-    batShape.setPosition(position);
+void Paddle::update(){
+    paddleShape.setPosition(position);
 }
 
 

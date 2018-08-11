@@ -6,14 +6,14 @@ class Paddle {
 
     private:
         Vector2f position;
-        RectangleShape batShape;
-        float batSpeed;
+        RectangleShape paddleShape;
+        float paddleSpeed;
 
     public:
         Paddle(float startX, float startY);
         FloatRect getPosition();
         RectangleShape getShape();
-        void moveLeft();
-        void moveRight();
+        void moveUp();
+        void moveDown();
         void update();
 };
