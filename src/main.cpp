@@ -17,13 +17,12 @@ int main() {
 
     //Declare window and shapes
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Pong");
-    sf::RectangleShape leftPaddle(Vector2f(10,100));
+    //sf::RectangleShape leftPaddle(Vector2f(10,100));
     sf::RectangleShape rightPaddle(Vector2f(10,100));
 
     //Set left paddle properties
-    leftPaddle.setFillColor(sf::Color::White);
-    int leftPaddleY = (WIN_HEIGHT)/2-50;
-    leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
+    Paddle leftPaddle(LEFT_PADDLE_X, (WIN_HEIGHT)/2-50);
+    //leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
 
 
     //Set right paddle properties 
@@ -51,12 +50,10 @@ int main() {
                 case sf::Event::KeyPressed:
                 {
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
-                        leftPaddleY -= 10;
-                        leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
+                        leftPaddle.moveUp();
                     }
                     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
-                        leftPaddleY += 10;
-                        leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
+                        leftPaddle.moveUp();
                     }
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
                         rightPaddleY -= 10;
