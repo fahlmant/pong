@@ -38,6 +38,7 @@ int main() {
     //Game loop
     while (window.isOpen())
     {
+        //Handle events
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -47,6 +48,7 @@ int main() {
                 {
                     window.close();
                 }
+                //Handle player input
                 case sf::Event::KeyPressed:
                 {
 					if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
@@ -57,9 +59,20 @@ int main() {
                         leftPaddleY += 10;
                         leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
 					}
+                    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                        rightPaddleY -= 10;
+                        rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
+                    }
+                    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                        rightPaddleY += 10;
+                        rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
+                    }
+
 				}
             }
         }
+
+        //Handle collions and ball animations
 
         //Handle the screen stuff
         window.clear();
