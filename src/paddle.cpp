@@ -23,12 +23,12 @@ RectangleShape Paddle::getShape(){
 
 void Paddle::moveUp(){
 
-    position.y -= paddleSpeed;
+    position.y -= 10;
 }
 
 void Paddle::moveDown(){
 
-    position.y += paddleSpeed;
+    position.y += 10;
 }
 
 void Paddle::update(){

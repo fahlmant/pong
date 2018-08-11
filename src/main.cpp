@@ -50,7 +50,7 @@ int main() {
                         leftPaddle.moveUp();
                     }
                     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
-                        leftPaddle.moveUp();
+                        leftPaddle.moveDown();
                     }
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
                         rightPaddleY -= 10;
@@ -68,7 +68,7 @@ int main() {
 
         //Handle the screen stuff
         window.clear();
-        window.draw(leftPaddle);
+        window.draw(leftPaddle.getShape());
         window.draw(rightPaddle);
         window.draw(ball.getShape());
         window.display();
