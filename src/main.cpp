@@ -51,14 +51,14 @@ int main() {
                 //Handle player input
                 case sf::Event::KeyPressed:
                 {
-					if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
+                    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
                         leftPaddleY -= 10;
                         leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
-					}
-					else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
+                    }
+                    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
                         leftPaddleY += 10;
                         leftPaddle.setPosition(Vector2f(LEFT_PADDLE_X, leftPaddleY));
-					}
+                    }
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
                         rightPaddleY -= 10;
                         rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
