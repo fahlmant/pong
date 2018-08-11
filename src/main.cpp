@@ -67,8 +67,7 @@ int main() {
                         rightPaddleY += 10;
                         rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
                     }
-
-				}
+                }
             }
         }
 
