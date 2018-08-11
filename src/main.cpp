@@ -3,20 +3,21 @@
 #include <stdio.h>
 #include <utility>
 
+#include "ball.h"
+
 #define WIN_WIDTH 800
 #define WIN_HEIGHT 600
 #define LEFT_PADDLE_X 50
 #define RIGHT_PADDLE_X 740
 using namespace sf;
 
-
 int main() {
+
 
     //Declare window and shapes
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Pong");
     sf::RectangleShape leftPaddle(Vector2f(10,100));
     sf::RectangleShape rightPaddle(Vector2f(10,100));
-    sf::RectangleShape ball(Vector2f(10,10));
 
     //Set left paddle properties
     leftPaddle.setFillColor(sf::Color::White);
@@ -30,10 +31,7 @@ int main() {
     rightPaddle.setPosition(Vector2f(RIGHT_PADDLE_X, rightPaddleY));
 
     //Set "ball" properties
-    ball.setFillColor(sf::Color::White);
-    int ballX = (WIN_WIDTH/2) - 5;
-    int ballY = (WIN_HEIGHT/2) - 5;
-    ball.setPosition(Vector2f(ballX, ballY));
+    Ball ball((WIN_WIDTH/2)-5, (WIN_HEIGHT/2)-5);
 
     //Game loop
     while (window.isOpen())
@@ -77,7 +75,7 @@ int main() {
         window.clear();
         window.draw(leftPaddle);
         window.draw(rightPaddle);
-        window.draw(ball);
+        window.draw(ball.getShape());
         window.display();
     }
 
