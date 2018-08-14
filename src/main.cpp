@@ -58,9 +58,20 @@ int main() {
                 }
             }
         }
+        if(ball.getShape().getPosition().y + 10 >= WIN_HEIGHT || ball.getShape().getPosition().y <= 0){
+            ball.reboundTopBottom();
+        }
+
+        if(ball.getShape().getPosition().x + 10 >= WIN_WIDTH) {
+            //Player 1 scores 
+        }
+        if(ball.getShape().getPosition().x <= 0) {
+            //Player 2 scores
+        }
 
         leftPaddle.update();
         rightPaddle.update();
+        ball.update();
 
         //Handle the screen stuff
         window.clear();
