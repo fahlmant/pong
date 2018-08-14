@@ -27,21 +27,25 @@ float Ball::getXVel(){
     return xVel;
 }
 
-void Ball::reboundSides(){
+float Ball::getYVel(){
+
+    return yVel;
+}
+
+
+void Ball::reboundTopBottom(){
+
+    yVel = -yVel;
+}
+
+void Ball::reboundPaddles(){
 
     xVel = -xVel;
 }
 
-void Ball::reboundTopAndBat(){
+void Ball::hitGoal(int x, int y){
 
-    position.y -= (yVel * 30);
-    yVel = -yVel;
-}
-
-void Ball::hitBot(){
-
-    position.y = 1;
-    position.x = 500;
+    ballShape.setPosition(position);
 }
 
 void Ball::update(){
