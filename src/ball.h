@@ -14,9 +14,10 @@ class Ball {
         FloatRect getPosition();
         RectangleShape getShape();
         float getXVel();
-        void reboundSides();
-        void reboundTopAndBat();
-        void hitBot();
+        float getYVel();
+        void reboundTopBottom();
+        void reboundPaddles();
+        void hitGoal(int x, int y);
         void update();
 
 };
