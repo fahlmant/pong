@@ -14,6 +14,8 @@ using namespace sf;
 
 int main() {
 
+    int playerOneScore = 0;
+    int playerTwoScore = 0;
 
     //Declare window
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Pong");
