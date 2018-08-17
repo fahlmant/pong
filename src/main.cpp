@@ -17,6 +17,13 @@ int main() {
     int playerOneScore = 0;
     int playerTwoScore = 0;
 
+    Text hud;
+    Font font;
+    font.loadFromFile("../txt/Overpass-Regular.ttf");
+    hud.setFont(font);
+    hud.setCharacterSize(50);
+    hud.setFillColor(sf::Color::White);
+
     //Declare window
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Pong");
 
