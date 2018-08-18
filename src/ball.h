@@ -17,7 +17,7 @@ class Ball {
         float getYVel();
         void reboundTopBottom();
         void reboundPaddles();
-        void hitGoal(int x, int y);
+        void hitGoal(float x, float y, float xv, float xy);
         void update();
 
 };

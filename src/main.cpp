@@ -74,14 +74,15 @@ int main() {
 
         if(ball.getShape().getPosition().x + 10 >= WIN_WIDTH) {
             playerOneScore++;
+            ball.hitGoal((WIN_WIDTH/2)-5, (WIN_HEIGHT/2)-5, -.03f, .03f);
         }
         if(ball.getShape().getPosition().x <= 0) {
             playerTwoScore++;
+            ball.hitGoal((WIN_WIDTH/2)-5, (WIN_HEIGHT/2)-5, .03f, .03f);
         }
         if (ball.getPosition().intersects(leftPaddle.getPosition()) || ball.getPosition().intersects(rightPaddle.getPosition())) {
-           ball.reboundPaddles(); 
+           ball.reboundPaddles();
         }
-
 
         leftPaddle.update();
         rightPaddle.update();

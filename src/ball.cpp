@@ -5,11 +5,20 @@ Ball::Ball(float startX, float startY){
     position.x = startX;
     position.y = startY;
 
-    xVel = .05f;
-    yVel = .05f;
+    xVel = .03f;
+    yVel = .03f;
 
     ballShape.setSize(sf::Vector2f(10, 10));
     ballShape.setPosition(position);
+}
+
+void Ball::hitGoal(float x, float y, float xv, float yv) {
+
+    position.x = x;
+    position.y = y;
+    ballShape.setPosition(position);
+    xVel = xv;
+    yVel = yv;
 }
 
 FloatRect Ball::getPosition(){
@@ -41,11 +50,6 @@ void Ball::reboundTopBottom(){
 void Ball::reboundPaddles(){
 
     xVel = -xVel;
-}
-
-void Ball::hitGoal(int x, int y){
-
-    ballShape.setPosition(position);
 }
 
 void Ball::update(){
