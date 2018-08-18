@@ -36,6 +36,7 @@ int main() {
     //Set "ball" properties
     Ball ball((WIN_WIDTH/2)-5, (WIN_HEIGHT/2)-5);
 
+
     //Game loop
     while (window.isOpen())
     {
@@ -72,11 +73,15 @@ int main() {
         }
 
         if(ball.getShape().getPosition().x + 10 >= WIN_WIDTH) {
-            //Player 1 scores 
+            playerOneScore++;
         }
         if(ball.getShape().getPosition().x <= 0) {
-            //Player 2 scores
+            playerTwoScore++;
         }
+        if (ball.getPosition().intersects(leftPaddle.getPosition()) || ball.getPosition().intersects(rightPaddle.getPosition())) {
+           ball.reboundPaddles(); 
+        }
+
 
         leftPaddle.update();
         rightPaddle.update();
