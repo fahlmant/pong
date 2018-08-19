@@ -54,16 +54,24 @@ int main() {
                 case sf::Event::KeyPressed:
                 {
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
-                        leftPaddle.moveUp();
+                        if (!(leftPaddle.getPosition().top <= 0)) {
+                            leftPaddle.moveUp();
+                        }
                     }
                     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
-                        leftPaddle.moveDown();
+                        if(!((leftPaddle.getPosition().top + leftPaddle.getPosition().height)  >= WIN_HEIGHT)) {
+                            leftPaddle.moveDown();
+                        }
                     }
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-                        rightPaddle.moveUp();
+                        if(!(rightPaddle.getPosition().top <= 0)) {
+                            rightPaddle.moveUp();
+                        }
                     }
                     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-                        rightPaddle.moveDown();
+                        if(!((rightPaddle.getPosition().top + leftPaddle.getPosition().height) >= WIN_HEIGHT)) {
+                            rightPaddle.moveDown();
+                    }
                     }
                 }
             }
